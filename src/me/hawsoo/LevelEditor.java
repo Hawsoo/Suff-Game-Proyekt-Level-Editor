@@ -1,5 +1,6 @@
 package me.hawsoo;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -67,7 +68,8 @@ public class LevelEditor
 	{
 		// Setup the frame
 		frame = new JFrame("Level Editor - by Hawsoo");
-		frame.setSize(1024, 576);
+		frame.setSize(new Dimension(1024, 576));
+		frame.setMinimumSize(new Dimension(640, 360));
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		SpringLayout springLayout = new SpringLayout();
 		frame.getContentPane().setLayout(springLayout);
