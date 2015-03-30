@@ -3,10 +3,13 @@ package me.hawsoo.ui;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JPanel;
 
 import me.hawsoo.LevelEditor;
+import me.hawsoo.lib.EditorTools;
 
 /**
  * Updates and manages the main
@@ -29,6 +32,29 @@ public class EditorView extends JPanel implements Runnable
 	{
 		this.width = width;
 		this.height = height;
+		
+		// Add clicking utility
+		addMouseListener(new MouseAdapter()
+		{
+			@Override
+			public void mouseReleased(MouseEvent e)
+			{
+				// Check which type of event
+				String name = ((EditorTools)LevelEditor.cmbEditorTools.getSelectedItem()).getName();
+				switch (name)
+				{
+				case "Select":
+					break;
+					
+				case "Create":
+					break;
+					
+				case "Delete":
+					// Delete object
+					break;
+				}
+			}
+		});
 	}
 	
 	@Override

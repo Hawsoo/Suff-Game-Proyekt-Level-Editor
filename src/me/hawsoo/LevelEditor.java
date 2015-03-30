@@ -1,4 +1,5 @@
 package me.hawsoo;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -27,6 +28,7 @@ import me.hawsoo.ui.EditorView;
 
 /**
  * Sets up and runs the application.
+ * 
  * @author Hawsoo
  *
  */
@@ -40,6 +42,7 @@ public class LevelEditor
 	
 	/**
 	 * Sets up the application.
+	 * 
 	 * @param argv
 	 */
 	public static void main(String[] argv)
@@ -50,13 +53,14 @@ public class LevelEditor
 			{
 				try
 				{
-					UIManager.setLookAndFeel(
-							UIManager.getSystemLookAndFeelClassName());
+					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 					
 					initialize();
 					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
-				} catch (Exception e) {}
+				} catch (Exception e)
+				{
+				}
 			}
 		});
 	}
@@ -74,17 +78,15 @@ public class LevelEditor
 		SpringLayout springLayout = new SpringLayout();
 		frame.getContentPane().setLayout(springLayout);
 		
-		frame.addWindowListener(
-				new WindowAdapter()
-				{
-					@Override
-					public void windowClosing(WindowEvent e)
-					{
-						// Exit application
-						exit();
-					}
-				}
-				);
+		frame.addWindowListener(new WindowAdapter()
+		{
+			@Override
+			public void windowClosing(WindowEvent e)
+			{
+				// Exit application
+				exit();
+			}
+		});
 		
 		// Creates menu
 		JMenuBar menuBar = new JMenuBar();
@@ -115,17 +117,15 @@ public class LevelEditor
 			
 			JMenuItem mntmExit = new JMenuItem("Exit");
 			{
-				mntmExit.addActionListener(
-						new ActionListener()
-						{
-							@Override
-							public void actionPerformed(ActionEvent e)
-							{
-								// Exit Application
-								exit();
-							}
-						}
-						);
+				mntmExit.addActionListener(new ActionListener()
+				{
+					@Override
+					public void actionPerformed(ActionEvent e)
+					{
+						// Exit Application
+						exit();
+					}
+				});
 				mnFile.add(mntmExit);
 			}
 		}
@@ -137,10 +137,14 @@ public class LevelEditor
 			JMenuItem mntmRoomProperties = new JMenuItem("Room Properties...");
 			mnSettings.add(mntmRoomProperties);
 			
+			mnSettings.addSeparator();
+			
 			chckbxmntmShowBoundingBoxes = new JCheckBoxMenuItem("Show Bounding Boxes");
+			chckbxmntmShowBoundingBoxes.setSelected(true);
 			mnSettings.add(chckbxmntmShowBoundingBoxes);
 			
 			chckbxmntmShowGrid = new JCheckBoxMenuItem("Show Grid");
+			chckbxmntmShowGrid.setSelected(true);
 			mnSettings.add(chckbxmntmShowGrid);
 		}
 		

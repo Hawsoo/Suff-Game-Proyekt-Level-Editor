@@ -26,6 +26,11 @@ public enum EditorTools
 		return index;
 	}
 	
+	public String getName()
+	{
+		return name;
+	}
+	
 	@Override
 	public String toString()
 	{
