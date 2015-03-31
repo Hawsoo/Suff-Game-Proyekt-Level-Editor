@@ -37,6 +37,27 @@ public class EditorView extends JPanel implements Runnable
 		addMouseListener(new MouseAdapter()
 		{
 			@Override
+			public void mousePressed(MouseEvent e)
+			{
+				// Check which type of event
+				String name = ((EditorTools)LevelEditor.cmbEditorTools.getSelectedItem()).getName();
+				switch (name)
+				{
+				case "Select":
+					// If selected TODO
+					if (true)
+					{
+						// Move object if mouse moves
+					}
+					break;
+					
+				case "Create":
+					// Create object and select it
+					break;
+				}
+			}
+			
+			@Override
 			public void mouseReleased(MouseEvent e)
 			{
 				// Check which type of event
@@ -44,9 +65,13 @@ public class EditorView extends JPanel implements Runnable
 				switch (name)
 				{
 				case "Select":
+					// Select object or multiple select
 					break;
 					
 				case "Create":
+					// Drop off object
+					
+					// Set mode to select MAYBE
 					break;
 					
 				case "Delete":
